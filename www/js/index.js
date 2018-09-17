@@ -29,14 +29,16 @@ var app = {
     onDeviceReady: function() {
         this.receivedEvent('deviceready');
 
-        navigator.geolocation.getCurrentPosition(position => {
-          console.log('getCurrentPosition succeed');
-          console.log(position);
-        }, error => {
-          console.log('getCurrentPosition fails');
-          console.log(error);
-        }, {
-          timeout: 10000
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            console.log('getCurrentPosition succeed');
+            console.log(position);
+          },
+          function(error) {
+            console.log('getCurrentPosition fails');
+            console.log(error);
+          }, {
+            timeout: 10000
         });
 
 
